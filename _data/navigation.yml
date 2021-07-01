@@ -1,0 +1,58 @@
+# main links
+main:
+  - title: Ansible
+    url: /ansible/ 
+  - title: "Citrix"
+    url: /citrix/
+  - title: HashiCorp
+    url: /hashicorp/
+  - title: Microsoft
+    url: /microsoft/
+  - title: VMware
+    url: /vmware/
+
+docs:
+- title: Home
+  url: /
+- title: Ansible
+  url: /ansible/    
+- title: Citrix  
+  url: /citrix/
+  children:
+    - title: "Netscaler"
+      url: /citrix/netscaler/
+    - title: "Storefront"
+      url: /citrix/storefront/
+    - title: "Octoblu"
+      url: /citrix/octoblu/
+    - title: "App Layering"
+      url: /citrix/app-layering/
+- title: HashiCorp
+  url: /hashicorp/
+- title: Microsoft
+  url: /microsoft/
+  children:
+    - title: "Azure"
+      url: /microsoft/azure/
+- title: VMware
+  url: /vmware/
+
+citrix:  
+- title: Citrix  
+  url: /citrix/
+  children:
+    - title: "Netscaler"
+      url: /citrix/netscaler/
+    - title: "Storefront"
+      url: /citrix/storefront/
+    - title: "Octoblu"
+      url: /citrix/octoblu/
+    - title: "App Layering"
+      url: /citrix/app-layering/
+
+microsoft:
+- title: Microsoft
+  url: /microsoft/
+  children:
+    - title: "Azure"
+      url: /microsoft/azure/
