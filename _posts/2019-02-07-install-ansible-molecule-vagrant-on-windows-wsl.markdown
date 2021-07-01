@@ -28,9 +28,9 @@ Ansible is a really cool and very popular config management (and a lot more!) t
 
 1.  Run Ubuntu from the start menu and upgrade all packages
 
-  ```
+    ```
     sudo apt update && apt upgrade -y
-  ```
+    ```
 
 2.  Install Ansible
 
