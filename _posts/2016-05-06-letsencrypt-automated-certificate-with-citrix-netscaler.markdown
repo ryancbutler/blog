@@ -17,6 +17,8 @@ tags:
   - ADC
   - SSL
   - Let's Encrypt
+redirect_from:
+  - /citrix/18-letsencrypt-san-certificate-with-citrix-netscaler-take-2
 ---
 This post covers a method using Python and Bash to automate the renewal and updating of a Netscaler SSL certificate with Let's Encrypt making it possible to use SAN or single named certficates.
 

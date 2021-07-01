@@ -5,7 +5,7 @@ joomla_id: 21
 joomla_url: create-an-ica-file-from-storefront-using-powershell-or-javascript
 date: 2016-07-25 01:00:35.000000000 +00:00
 author: Ryan Butler
-permalink: /citrix/storefront/21-create-an-ica-file-from-storefront-using-powershell-or-javascript
+permalink: /citrix/21-create-an-ica-file-from-storefront-using-powershell-or-javascript
 excerpt: "Stand alone ICA files used to allow organizations a multitude of access options, such as single click web shortcuts, login scripts or simple desktop shortcuts for XenApp access as recent as 6.5. When XenApp moved to the FMA architecture the good ol' days of the stand alone ICA files were gone  Administrators can attempt to come close to the same behavior by utilizing Receiver SSO with shortcut publishing or web shortcuts created from Storefront. While the ease of access is still \"kind of\" there, it's not nearly as easy and convenient as running a simple ICA file."
 categories:
   - Citrix
@@ -15,6 +15,8 @@ tags:
   - ICA
   - PowerShell
   - Javascript
+redirect_from:
+  - /citrix/21-create-an-ica-file-from-storefront-using-powershell-or-javascript
 ---
 # Good ol' ICA File
 
