@@ -69,4 +69,4 @@ Requirements:
 * [Unauthenticated StoreFront Store created](http://docs.citrix.com/en-us/storefront/3/configure-and-manage-stores/sf-create-store-unauthenticated.html)
 * [Anonymous Delivery Group](https://www.citrix.com/blogs/2014/04/21/part-5-anonymous-user-support-for-xenapp-on-fma/) created
 
-[<span style="text-decoration: underline;">DOWNLOAD SCRIPT FROM GITHUB</span>](https://github.com/ryancbutler/StorefrontICACreator)
+[DOWNLOAD SCRIPT FROM GITHUB](https://github.com/ryancbutler/StorefrontICACreator)

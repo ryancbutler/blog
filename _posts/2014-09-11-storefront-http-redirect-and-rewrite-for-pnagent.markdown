@@ -28,7 +28,9 @@ Here are the CLI commands to create the LB server on the Netscaler.
 
 ### Create the LB Server
 
-```add lb vserver lb_sf_httpres HTTP 192.168.2.16 80 -persistenceType NONE -cltTimeout 180```
+```
+add lb vserver lb_sf_httpres HTTP 192.168.2.16 80 -persistenceType NONE -cltTimeout 180
+```
 
 ### Rewrite to HTTP
 
@@ -48,9 +50,7 @@ Not sure if this actually works as it should but this allows to save the passwor
 
 ```
 add rewrite action act_storefront_enable_password_save replace_all "http.res.body(100000)" "\"<EnableSavePassword>true</EnableSavePassword>\"" -pattern "<EnableSavePassword>false</EnableSavePassword>"
-
 add rewrite policy pol_storefront_enable_password_save "http.req.url.path.endswith(\"/PNAgent/config.xml\")" act_storefront_enable_password_save
-
 bind lb vserver lb_sf_httpres -policyName pol_storefront_enable_password_save -priority 110 -gotoPriorityExpression NEXT -type RESPONSE
 ```
 
@@ -60,9 +60,7 @@ If Storefront has SSO enabled it also adds prompt (http://support.citrix.com/pro
 
 ```
 add rewrite action act_add_prompt_and_sso replace_all "http.res.body(100000)" "\"<LogonMethod>sson</LogonMethod><LogonMethod>prompt</LogonMethod>\"" -pattern "<LogonMethod>sson</LogonMethod>"
-
 add rewrite policy pol_storefront_add_prompt "http.req.url.path.endswith(\"/PNAgent/config.xml\")" act_add_prompt_and_sso
-
 bind lb vserver lb_sf_httpres -policyName pol_storefront_add_prompt -priority 120 -gotoPriorityExpression NEXT -type RESPONSE
 ```
 
@@ -72,9 +70,7 @@ Used if a user just enters hostname in pnagent field since it will redirect to P
 
 ```
 add responder action res_act_tostore redirect "\"http://storefront.mydomain.com/Citrix/Store/PNAgent/config.xml\"" -bypassSafetyCheck YES
-
 add responder policy pol_http_pnagnet_to_store "HTTP.REQ.URL.CONTAINS(\"/Citrix/PNAgent/config.xml\")" res_act_tostore
-
 bind lb vserver lb_sf_httpres -policyName pol_http_pnagnet_to_store -priority 100 -gotoPriorityExpression END -type REQUEST
 ```
 
@@ -82,8 +78,6 @@ bind lb vserver lb_sf_httpres -policyName pol_http_pnagnet_to_store -priority 10
 
 ```
 add responder action Responder_redirect redirect "\"https://mycitrix.lab.local/Citrix/MainWeb\"" -bypassSafetyCheck YES
-
 add responder policy http "HTTP.REQ.URL.CONTAINS(\"/PNAgent/\").NOT" Responder_redirect
-
 bind lb vserver lb_sf_httpres -policyName http -priority 110 -gotoPriorityExpression END -type REQUEST
 ```

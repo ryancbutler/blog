@@ -58,7 +58,6 @@ Thanks to [Steve Noel](https://twitter.com/steve_noel) for helping me test!
 Find-Script -name Get-NSlicexp  
 Save-Script -name Get-NSlicexp -path <path>
 ```
-</pre>
 
 ### PSGallery Module (PowerShell 5.0 or greater)
 
