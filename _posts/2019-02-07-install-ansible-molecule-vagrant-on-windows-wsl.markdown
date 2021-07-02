@@ -11,8 +11,6 @@ tags:
   - Ansible
   - WSL
   - Molecule
-header:
-  teaser: /assets/images/content/molecule/main.png
 ---
 Ansible is a really cool and very popular config management (and a lot more!) tool but sadly the control plane only runs on Linux based systems.  As primarily a Windows user I wanted to see if it would function in the "newish" WSL environment and after a lot of trial and error found that it works great!  In this quick post I go over how to install Ansible for config management, Molecule to test roles, Vagrant to run the tests all while running on Windows WSL.
 
