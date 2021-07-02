@@ -126,7 +126,7 @@ Next we need to edit the "http POST" to use our message and send to the Slack we
 
 Adjust the keys to use our message and few other modifications.  You can find more settings [here](https://api.slack.com/incoming-webhooks) from Slack.
 
- ![key](/assets/images/content/slackdirector/key.png)
+![key](/assets/images/content/slackdirector/key.png)
 
 Make sure to save the flow and approve any Octoblu permissions that are needed from the "Permissions Inspector". 
 

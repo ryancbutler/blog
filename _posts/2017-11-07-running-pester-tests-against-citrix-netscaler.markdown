@@ -68,6 +68,7 @@ If you have Git installed the easiest method would be to clone the repository.
 If you prefer to download the files instead you can grab them here.
 
 [DOWNLOAD](https://github.com/ryancbutler/ns-pester/archive/master.zip)
+{: .notice--info}
 
 ## What do the tests do?
 

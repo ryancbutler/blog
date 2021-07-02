@@ -27,7 +27,7 @@ Citrix released a [blog](https://www.citrix.com/blogs/2015/05/22/scoring-an-a-at
 
 ## Download
 
-[SCRIPT FOUND HERE  
-](https://github.com/ryancbutler/Citrix/blob/master/Netscaler/)
+[SCRIPT FOUND HERE](https://github.com/ryancbutler/Citrix/blob/master/Netscaler/)
+{: .notice--info}
 
-[](https://github.com/ryancbutler/Citrix/blob/master/Netscaler/)Thanks to [Carl Stalhood](http://www.carlstalhood.com/netscaler-scripting/) for a great starting point on the Netscaler API portion!
+Thanks to [Carl Stalhood](http://www.carlstalhood.com/netscaler-scripting/) for a great starting point on the Netscaler API portion!
