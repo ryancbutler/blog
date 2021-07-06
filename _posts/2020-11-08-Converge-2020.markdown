@@ -18,7 +18,7 @@ This repo is part of my **[Citrix Converge 2020](https://www.citrix.com/blogs/20
 {% include video id="sKlx9HqI5Rc" provider="youtube" %}
 
 ## Prerequisite
-You'll need the follwing pre-reqs before getting started.
+You'll need the following pre-reqs before getting started.
 
 ### Azure DevOps
 
