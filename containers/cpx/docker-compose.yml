@@ -1,0 +1,111 @@
+version: '3'
+
+services:
+  consul-server-bootstrap:
+    image:  consul:latest
+    container_name: consul-server-bootstrap
+    command: "agent -server -ui -node=consul-server-bootstrap -bootstrap-expect=3"
+    networks:
+        - consul-cpx
+    # ports:
+    #   - "8500:8500"
+    #   - "8600:8600/udp"
+
+
+  consul-server-1:
+    image:  consul:latest
+    container_name: consul-server-1
+    command: "agent -server -node=consul-server-1 -retry-join consul-server-bootstrap -retry-join consul-server-2 -client 0.0.0.0"
+    networks:
+      - consul-cpx
+    depends_on:
+      - consul-server-bootstrap
+
+  consul-server-2:
+    image:  consul:latest
+    container_name: consul-server-2
+    command: "agent -server -node=consul-server-2 -retry-join consul-server-bootstrap -retry-join consul-server-1 -client 0.0.0.0"
+    networks:
+        - consul-cpx
+    depends_on:
+      - consul-server-bootstrap
+
+  consul-client:
+    image: consul:latest
+    container_name: consul-client
+    restart: always
+    networks:
+        consul-cpx:
+          aliases:
+            - consul
+    depends_on:
+        - consul-server-bootstrap
+    command: "agent -ui -node=consul-client -retry-join consul-server-bootstrap -retry-join consul-server-2 -retry-join consul-server-1 -client 0.0.0.0"
+    ports:
+        - "8500:8500"
+        - "8600:8600/udp"
+  
+  sidecar:
+    build: ./sidecar
+    image: sidecar
+    networks:
+      - consul-cpx
+    container_name: sidecar
+    depends_on:
+      - consul-server-bootstrap
+      - consul-server-1
+      - consul-server-2
+      - cpx
+    environment: 
+      - SERVICENAME=citrix-k8s-cpx-ingress-9080
+      - WEBSERVICE=jekyll-4000
+      - WEBPORT=4000
+      - LBPORT=88
+  
+  registrator:
+    image: gliderlabs/registrator:latest
+    command: "-cleanup -resync 5 consul://consul-client:8500 -internal"
+    networks:
+      - consul-cpx
+    container_name: registrator
+    depends_on:
+      - consul-client
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock
+
+  cpx:
+    image: quay.io/citrix/citrix-k8s-cpx-ingress:13.0-79.64
+    networks:
+      - consul-cpx
+    tty: true
+    ports:
+      - 9080
+      - 9443
+      - 161/udp
+      - 35021-35030
+      - 88:88 #LB Port
+    container_name: cpx
+    privileged: true
+    ulimits:
+      core: -1
+    volumes:
+      - /root/test:/cpx
+    environment:
+      -  CPX_CORES=1
+      -  EULA=yes
+      #-  NS_NETMODE=HOST
+      -  NS_PASSWORD=nsroot
+    command: [cli_script.sh "set system user nsroot nsroot" && /var/netscaler/bins/cpx_init]
+
+  web:
+    image: jekyll/jekyll
+    command: jekyll serve --livereload --verbose
+    networks:
+        - consul-cpx
+    ports:
+      - 4000
+    volumes:
+      - ../..:/srv/jekyll
+
+networks:
+  consul-cpx:
