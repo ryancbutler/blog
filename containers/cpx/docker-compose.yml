@@ -99,7 +99,7 @@ services:
 
   web:
     image: jekyll/jekyll
-    command: bash -c "chmod -R 777 /srv/jekyll && jekyll serve --livereload --verbose"
+    command: bash -c "chmod -R 777 /srv/jekyll && jekyll serve --verbose"
     networks:
         - consul-cpx
     ports:
