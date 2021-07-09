@@ -89,13 +89,12 @@ services:
     ulimits:
       core: -1
     volumes:
-      - /root/test:/cpx
+      - ./cpx.conf:/etc/cpx.conf
     environment:
       -  CPX_CORES=1
       -  EULA=yes
       #-  NS_NETMODE=HOST
       -  NS_PASSWORD=nsroot
-    command: [cli_script.sh "set system user nsroot nsroot" && /var/netscaler/bins/cpx_init]
 
   web:
     image: jekyll/jekyll
