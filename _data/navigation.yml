@@ -1,8 +1,8 @@
 # main links
 main:
   - title: Ansible
-    url: /ansible/ 
-  - title: "Citrix"
+    url: /ansible/
+  - title: Citrix
     url: /citrix/
   - title: HashiCorp
     url: /hashicorp/
@@ -10,49 +10,57 @@ main:
     url: /microsoft/
   - title: VMware
     url: /vmware/
+  - title: Support
+    url: /support/
 
 docs:
-- title: Home
-  url: /
-- title: Ansible
-  url: /ansible/    
-- title: Citrix  
-  url: /citrix/
-  children:
-    - title: "Netscaler"
-      url: /citrix/netscaler/
-    - title: "Storefront"
-      url: /citrix/storefront/
-    - title: "Octoblu"
-      url: /citrix/octoblu/
-    - title: "App Layering"
-      url: /citrix/app-layering/
-- title: HashiCorp
-  url: /hashicorp/
-- title: Microsoft
-  url: /microsoft/
-  children:
-    - title: "Azure"
-      url: /microsoft/azure/
-- title: VMware
-  url: /vmware/
+  - title: Home
+    url: /
+  - title: Ansible
+    url: /ansible/
+  - title: Citrix
+    url: /citrix/
+    children:
+      - title: "Netscaler"
+        url: /citrix/netscaler/
+      - title: "Storefront"
+        url: /citrix/storefront/
+      - title: "Octoblu"
+        url: /citrix/octoblu/
+      - title: "App Layering"
+        url: /citrix/app-layering/
+  - title: HashiCorp
+    url: /hashicorp/
+  - title: Microsoft
+    url: /microsoft/
+    children:
+      - title: "Azure"
+        url: /microsoft/azure/
+  - title: VMware
+    url: /vmware/
+  - title: Support
+    url: /support/
 
-citrix:  
-- title: Citrix  
-  url: /citrix/
-  children:
-    - title: "Netscaler"
-      url: /citrix/netscaler/
-    - title: "Storefront"
-      url: /citrix/storefront/
-    - title: "Octoblu"
-      url: /citrix/octoblu/
-    - title: "App Layering"
-      url: /citrix/app-layering/
+citrix:
+  - title: Citrix
+    url: /citrix/
+    children:
+      - title: "Netscaler"
+        url: /citrix/netscaler/
+      - title: "Storefront"
+        url: /citrix/storefront/
+      - title: "Octoblu"
+        url: /citrix/octoblu/
+      - title: "App Layering"
+        url: /citrix/app-layering/
+  - title: Support
+    url: /support/
 
 microsoft:
-- title: Microsoft
-  url: /microsoft/
-  children:
-    - title: "Azure"
-      url: /microsoft/azure/
+  - title: Microsoft
+    url: /microsoft/
+    children:
+      - title: "Azure"
+        url: /microsoft/azure/
+  - title: Support
+    url: /support/
