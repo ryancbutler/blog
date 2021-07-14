@@ -1,17 +1,17 @@
 # main links
 main:
-  - title: Ansible
-    url: /ansible/
   - title: Citrix
     url: /citrix/
   - title: HashiCorp
     url: /hashicorp/
-  - title: Microsoft
-    url: /microsoft/
+  - title: Donate
+    url: /support/
   - title: VMware
     url: /vmware/
-  - title: Support
-    url: /support/
+  - title: Ansible
+    url: /ansible/
+  - title: Microsoft
+    url: /microsoft/
 
 docs:
   - title: Home
@@ -38,8 +38,6 @@ docs:
         url: /microsoft/azure/
   - title: VMware
     url: /vmware/
-  - title: Support
-    url: /support/
 
 citrix:
   - title: Citrix
@@ -53,8 +51,6 @@ citrix:
         url: /citrix/octoblu/
       - title: "App Layering"
         url: /citrix/app-layering/
-  - title: Support
-    url: /support/
 
 microsoft:
   - title: Microsoft
@@ -62,5 +58,3 @@ microsoft:
     children:
       - title: "Azure"
         url: /microsoft/azure/
-  - title: Support
-    url: /support/
