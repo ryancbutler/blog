@@ -57,7 +57,7 @@ extra_config = {
   }
 ```
 
-With the attribute is set, we need to execute it on boot. To do this I'm using the run-once command to pull down the attribute using the **rpctool.exe** that comes with VMware tools (no extra install needed), convert the base64 to PowerShell then execute the script which is being set in the `vsphere_virtual_machine` resource as you can see here in the `run_once_command_list`:
+With the attribute set, we need to execute it on boot. To do this I'm using the run-once command to pull down the attribute using the **rpctool.exe** that comes with VMware tools (no extra install needed), convert the base64 to PowerShell then execute the script which is being set in the `vsphere_virtual_machine` resource as you can see here in the `run_once_command_list`:
 ```terraform
 clone {
     template_uuid = data.vsphere_virtual_machine.template.id
