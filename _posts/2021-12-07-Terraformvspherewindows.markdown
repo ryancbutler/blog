@@ -18,6 +18,9 @@ If you ever tried to use the **run-once** portion of a customization you know it
 
 To prevent the need for an external script or handling of the unattend.xml file I decided to leverage the metadata attribute to store my PowerShell script. The script gets rendered via Terraform to allow variable substitution then converted to base64 and finally being set in the attribute. The main components of the process:
 
+Terrraform code is available here: https://github.com/ryancbutler/terraform-vsphere-windows-userdata-vm
+{: .notice--info}
+
 ## PowerShell Template
 The `bootstrap.ps1` script uses variable substitution to render the script with any needed data for the VM such as passwords and domain info. Anything with `{var}` gets replaced via Terraform.
  
@@ -57,7 +60,8 @@ extra_config = {
   }
 ```
 
-With the attribute set, we need to execute it on boot. To do this I'm using the run-once command to pull down the attribute using the **rpctool.exe** that comes with VMware tools (no extra install needed), convert the base64 to PowerShell then execute the script which is being set in the `vsphere_virtual_machine` resource as you can see here in the `run_once_command_list`:
+With the attribute set, we need to execute it on boot. To do this I'm using the run-once command from the customization spec to pull down the attribute blob using the **rpctool.exe** that comes with VMware tools (no extra install needed), convert the base64 to PowerShell then execute the script which is being set in the `vsphere_virtual_machine` resource as you can see here in the `run_once_command_list`:
+
 ```terraform
 clone {
     template_uuid = data.vsphere_virtual_machine.template.id
