@@ -1,6 +1,6 @@
 ---
 layout: single
-title: Using vSphere Guest Customization Attributes with Terraform and Windows 
+title: Using vSphere Guest Customization Attributes with Windows and Terraform 
 categories:
   - HashiCorp
 author: Ryan Butler
@@ -89,7 +89,7 @@ clone {
   }
 ```
 
-It's important to have `auto_logon_count` set to `1` so the VM logs on after the Sysprep process to kickoff the command.
+It's important to have `auto_logon_count` set to `1` so the VM logs in after the Sysprep process to kickoff the command.
 {: .notice--info}
 
 ## Cleaning up
