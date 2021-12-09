@@ -30,7 +30,7 @@ The `bootstrap.ps1` script uses variable substitution to render the script with 
  
 For example, the `bootstrap.ps1` template contains the following code:
 
-```PowerShell
+```powershell
 #Add to domain
 write-host "Add to domain"
 $domain = "${addomain}"
