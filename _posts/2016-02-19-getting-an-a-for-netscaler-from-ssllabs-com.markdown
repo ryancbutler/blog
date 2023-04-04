@@ -16,8 +16,9 @@ tags:
 ---
 # Updates
 
-- **6-13-16**: Updated Script to reflect [Citrix blog](https://www.citrix.com/blogs/2016/06/09/scoring-an-a-at-ssllabs-com-with-citrix-netscaler-2016-update/) with updated ciphers
-- **2-21-16**: Script now creates STS policy and enables Forward Secrecy resulting in A+ for all SSL VIPS!
+**6-13-16**: Updated Script to reflect [Citrix blog](https://www.citrix.com/blogs/2016/06/09/scoring-an-a-at-ssllabs-com-with-citrix-netscaler-2016-update/) with updated ciphers
+**2-21-16**: Script now creates STS policy and enables Forward Secrecy resulting in A+ for all SSL VIPS!
+**4-4-23**: Updates by [Marco Hofmann](https://twitter.com/xenadmin)
 {: .notice--info}
 
 * * *
