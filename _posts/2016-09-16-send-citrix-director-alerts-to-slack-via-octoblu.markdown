@@ -24,14 +24,14 @@ Citrix released XenDesktop 7.11 this week which brings a fantastic feature where
 
 ### What you'll need
 
-*   [Octoblu](https://octoblu.com/) account
-*   [Slack](https://slack.com/) account and access to integrations
-*   Access to Citrix director and DDC with XenDesktop 7.11 installed  
+* [Octoblu](https://octoblu.com/) account
+* [Slack](https://slack.com/) account and access to integrations
+* Access to Citrix director and DDC with XenDesktop 7.11 installed  
 
-*   ## Octoblu
+## Octoblu
 
-*   Let's start with the basic configuration of the Octoblu workflow and grabbing the needed webhook URL used with director.  Lay out the workflow in a similar manner to the screenshot below.  I usually throw the debug switch on everything for troubleshooting.
-*   ![title2](/assets/images/content/slackdirector/title2.png)
+* Let's start with the basic configuration of the Octoblu workflow and grabbing the needed webhook URL used with director.  Lay out the workflow in a similar manner to the screenshot below.  I usually throw the debug switch on everything for troubleshooting.
+* ![title2](/assets/images/content/slackdirector/title2.png)
 
 1 Trigger  
 1 Template  
@@ -128,7 +128,7 @@ Adjust the keys to use our message and few other modifications.  You can find m
 
 ![key](/assets/images/content/slackdirector/key.png)
 
-Make sure to save the flow and approve any Octoblu permissions that are needed from the "Permissions Inspector". 
+Make sure to save the flow and approve any Octoblu permissions that are needed from the "Permissions Inspector".
 
 Now if the CPU hits the threshhold you should receive an alert to your slack channel!  I used good ol [PRIME95](http://www.mersenne.org/download/) to spike the CPU for the test.
 
